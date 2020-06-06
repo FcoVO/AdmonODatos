@@ -33,7 +33,7 @@ $F = $a[5];
 $b = 0 ;
 $sum = ($B * 1) + ($C * 2) + ($D * 3 ) + ($E *4 ) + ($F * 5) ;
 $prom = $sum / 25000 ;
-print $prom ;
+
     echo("<div class=container>
             <h1 class=titulo>Número de televisores por vivienda 
             </h1>
@@ -126,7 +126,7 @@ print $prom ;
         }
     });
     </script>
-    <!--<caption>Número de televisores/pantallas que hay en cada vivienda en una determinada ciudad </caption> -->
+    <caption>Con los datos obtenido podemos concluir; que en promedio en cada casa hay entre 2 y 3 televisores </caption> -->
 </body>
 
 </html>
