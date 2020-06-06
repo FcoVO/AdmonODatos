@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafica 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+</head>
+
+<body>
+    <div class="ct-chart ct-perfect-fourth"></div>
+    <script>
+    var datos = {
+
+        labels: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie'],
+
+        series: [
+            [5, 4, 3, 7, 5, 10],
+            [3, 2, 9, 5, 4, 6],
+            [2, 1, -3, -4, -2, 0]
+        ]
+    };
+    var opciones = {
+        //No dibujar los puntos del gráfico de líneas
+        showPoint: false,
+        // Deshabilitar suavizado de línea
+        lineSmooth: false,
+        // Configuración específica del eje X
+        axisX: {
+            //Podemos deshabilitar la cuadrícula para este eje
+            showGrid: false,
+            // y tampoco mostrar la etiqueta
+            showLabel: false
+        },
+        // Configuración específica del eje Y
+        axisY: {
+            // Vamos a mover un poco el margen izquierdo de las etiquetas
+            offset: 60,
+            // La función de interpolación de etiquetas permite modificar
+            //los valores utilizados para las etiquetas en cada eje.
+            // Aquí estamos convirtiendo los valores en millones de libras.
+            labelInterpolationFnc: function(value) {
+                return '$' + value + 'm';
+            }
+        }
+    };
+    // Todo lo que necesitas hacer es pasar la configuración
+    // como tercer parámetro a la función de gráfico
+    new Chartist.Line('.ct-chart', datos, opciones);
+    </script>
+    <div></div>
+
+</body>
+
+</html>
